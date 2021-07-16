@@ -30,7 +30,7 @@ void readInput(){
     }
     
     temperature = temperatureSumm/20;  // faz uma média das 20 leituras de temperatura
-    temperatureSumm = 0;  // zera temperatureSumm pára evitar leituras infinitas
+    temperatureSumm = 0;  // zera temperatureSumm para evitar leituras infinitas
     
     if(temperature != oldTemp){ // só atualiza o lcd se o valor atual for diferente do salvo
       lcd.clear();
@@ -53,7 +53,7 @@ void checkTemperature(){
 }
 
 
-void activateHeater(bool option){ //função que ativa ou desativa heater
+void activateHeater(bool option){ 
   if(option){
     analogWrite(HEATER, 255);
   }
@@ -67,7 +67,7 @@ void activateHeater(bool option){ //função que ativa ou desativa heater
 
 
 void setup () {
-  //set variables
+  //inicializa as variaveis
   temperatureSumm=0;
   oldTemp = 0;
   supLimit= 58.0;
